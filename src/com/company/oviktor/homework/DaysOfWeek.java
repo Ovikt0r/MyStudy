@@ -8,7 +8,7 @@ public class DaysOfWeek {
 
         int item;
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter a day number:");
+        System.out.println("Enter the number of the day:");
         item = in.nextInt();
 
         if (item > 0 && item < 8) {
