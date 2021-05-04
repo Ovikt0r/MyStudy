@@ -12,11 +12,10 @@ public class DaysOfWeek {
     }
 
     static void calculateDay() {
-
+       
         try {
             System.out.println("Enter the number of the day :");
             item = in.nextInt();
-
             if (item > 0 && item < 8) {
                 switch (item) {
                     case 1 -> System.out.println("Monday");
@@ -39,8 +38,8 @@ public class DaysOfWeek {
     }
 
     static void continueCalculate() {
+        
         ch = in.next().charAt(0);
-
         if (ch == 'Y' || ch == 'y') {
             calculateDay();
         }
@@ -49,7 +48,5 @@ public class DaysOfWeek {
         } else {
             System.out.println("Enter the right symbol !");
         }
-
     }
 }
-
