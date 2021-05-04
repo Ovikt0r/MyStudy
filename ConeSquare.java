@@ -44,14 +44,13 @@ public class ConeSquare {
         } catch (Exception e) {
             System.out.println("Enter the number in the right format ");
         }
-
     }
 
     static void continueCalculate() {
+        
         ch = in.next().charAt(0);
-
         if (ch == 'Y' || ch == 'y') {
-            calculateSquare();
+        calculateSquare();
         }
         if (ch == 'N' || ch == 'n') {
             System.out.println("Good bye");
@@ -59,5 +58,5 @@ public class ConeSquare {
             System.out.println("Enter the right symbol !");
         }
     }
-
+    
 }
