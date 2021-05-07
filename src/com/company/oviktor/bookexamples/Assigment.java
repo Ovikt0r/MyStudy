@@ -16,11 +16,11 @@ public class Assigment {
         t2 = new Tank();
         t1.level = 9;
         t2.level = 47;
-        p1.print("1: t1.level: " + t1.level + ", t2.level: " + t2.level);
+        p1.print(" 1: t1.level: " + t1.level + ", t2.level: " + t2.level+ "\n");
         t1=t2;
-        p1.print("2: t1.level: " + t1.level + ", t2.level: " + t2.level);
+        p1.print(" 2: t1.level: " + t1.level + ", t2.level: " + t2.level+ "\n");
         t1.level = 27;
-        p1.print("3: t1.level: " + t1.level + ", t2.level: " + t2.level);
+        p1.print(" 3: t1.level: " + t1.level + ", t2.level: " + t2.level+ "\n");
 
     }
     }
