@@ -2,7 +2,7 @@ package com.company.oviktor.homework;
 
 import java.util.Scanner;
 
-public class DaysOfWeek {
+class DaysOfWeek {
     static int item;
     static char ch;
     static Scanner in = new Scanner(System.in);

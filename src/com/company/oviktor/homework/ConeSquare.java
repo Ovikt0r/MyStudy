@@ -47,12 +47,10 @@ public class ConeSquare {
                 System.out.println("Сone surface area is:");
                 System.out.println("s = " + f.format(s));
 
-                continueCalculate();
-
             } else {
                 System.err.println("The value cannot be calculated! Enter positive number, please");
-                continueCalculate();
             }
+            continueCalculate();
 
         } catch (
                 Exception e) {
