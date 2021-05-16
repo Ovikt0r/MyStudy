@@ -51,19 +51,19 @@ public class ConeSquare {
 
     static void continueCalculate() {
 
-        System.out.println("Do you want to calculate the square again ? Type 'Y' or 'N'");
+        System.out.println("Do you want to calculate the square again ? Type 'Yes' or 'No'");
         try (Scanner in = new Scanner(System.in)) {
             while (true) {
                 String input = in.nextLine();
-                if (input.equalsIgnoreCase("y")) {
+                if (input.equalsIgnoreCase("yes")) {
                     calculateSquare();
                     break;
-                } else if (input.equalsIgnoreCase("n")) {
+                } else if (input.equalsIgnoreCase("no")) {
                     System.out.println("Good bye");
                     break;
                 } else {
-                    System.out.println("Enter the right alphabetical symbol !");
-                    System.out.println("Type 'Y' or 'N'");
+                    System.out.println("Make the right choice !");
+                    System.out.println("Type 'Yes' or 'No'");
                 }
             }
         }
