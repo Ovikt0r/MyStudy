@@ -1,6 +1,6 @@
 package com.company.oviktor.booktasks.contolingexecution;
 
-public class Ch04Ex05 {
+public class Ex05 {
 
     static boolean test(int test, int begin, int end) {
         return test >= begin && test <= end;

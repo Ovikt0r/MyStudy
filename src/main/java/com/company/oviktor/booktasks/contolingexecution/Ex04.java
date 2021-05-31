@@ -14,9 +14,9 @@ public class Ex04 {
                     break;
                 }
             }
-            if (next)
-                System.out.print(i + " ");
+             if (next)
+                 System.out.print(i + " ");
+            }
         }
-    }
 
-}
+    }
