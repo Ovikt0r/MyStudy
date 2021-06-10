@@ -1,8 +1,12 @@
 package com.company.oviktor.homework;
 
 import java.util.Scanner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 class DaysOfWeek {
+
+    private final static Logger log = LoggerFactory.getLogger(DaysOfWeek.class);
 
 
     public static void main(String[] args) {
@@ -26,7 +30,7 @@ class DaysOfWeek {
                     case 4 -> System.out.println("Thursday");
                     case 5 -> System.out.println("Friday");
                     case 6 -> System.out.println("Saturday");
-                    case 7 -> System.out.println("Sunday");
+                    case 7 -> log.debug("Sunday");
                 }
                 continueCalculate();
             } else {
