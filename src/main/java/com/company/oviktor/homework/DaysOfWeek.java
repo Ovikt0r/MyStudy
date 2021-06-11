@@ -10,6 +10,7 @@ class DaysOfWeek {
 
 
     public static void main(String[] args) {
+        log.info("It's a launch of the app");
         calculateDay();
     }
 
@@ -24,13 +25,13 @@ class DaysOfWeek {
             int item = in.nextInt();
             if (item > 0 && item < 8) {
                 switch (item) {
-                    case 1 -> System.out.println("Monday");
-                    case 2 -> System.out.println("Tuesday");
-                    case 3 -> System.out.println("Wednesday");
-                    case 4 -> System.out.println("Thursday");
-                    case 5 -> System.out.println("Friday");
-                    case 6 -> System.out.println("Saturday");
-                    case 7 -> log.debug("Sunday");
+                    case 1 -> log.info("Monday");
+                    case 2 -> log.info("Tuesday");
+                    case 3 -> log.info("Wednesday");
+                    case 4 -> log.info("Thursday");
+                    case 5 -> log.info("Friday");
+                    case 6 -> log.info("Saturday");
+                    case 7 -> log.info("Sunday");
                 }
                 continueCalculate();
             } else {
