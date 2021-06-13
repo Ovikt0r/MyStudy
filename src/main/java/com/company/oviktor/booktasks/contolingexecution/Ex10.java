@@ -4,7 +4,8 @@ import java.util.*;
 
 public class Ex10 {
 
-    static Set<String> ts = new HashSet<>();
+   // static Set<String> ts = new HashSet<>();
+    static SortedSet ss = new TreeSet();
     static int a (int i) {
         return i/1000;
     }
@@ -23,7 +24,7 @@ public class Ex10 {
 
     static void productVampNumber (int i, int k, int l) {
         if (i == k * l)
-            ts.add(i + "=" + k + "*" + l);
+            ss.add(i + "=" + k + "*" + l);
     }
 
     public static void main(String[] args) {
@@ -34,9 +35,9 @@ public class Ex10 {
             productVampNumber(i, com(c(i), a(i)), com(b(i), d(i)));
 
         }
-        List<String> sortedNumbers = new ArrayList<String>(ts);
-        Collections.sort(sortedNumbers);
-        System.out.println(sortedNumbers);
+       // List<String> sortedNumbers = new ArrayList<String>(ts);
+       // Collections.sort(sortedNumbers);
+        System.out.println(ss);
 
     }
 }
