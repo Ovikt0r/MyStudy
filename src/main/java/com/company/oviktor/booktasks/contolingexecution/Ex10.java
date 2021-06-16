@@ -6,6 +6,9 @@ public class Ex10 {
 
    // static Set<String> ts = new HashSet<>();
     static SortedSet ss = new TreeSet();
+
+public class Ex10 {
+
     static int a (int i) {
         return i/1000;
     }
@@ -21,6 +24,7 @@ public class Ex10 {
     static int com (int z, int y) {
         return (z * 10) + y;
     }
+
 
     static void productVampNumber (int i, int k, int l) {
         if (i == k * l)
