@@ -2,14 +2,18 @@ package com.company.oviktor.homework;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ConeSquare {
 
+    private final static Logger log = LoggerFactory.getLogger(DaysOfWeek.class);
+
 
     public static void main(String[] args) {
-        System.out.println("Hi! This program calculate whole surface area of the cone.");
-        System.out.println("You should enter the radius 'r' and the height 'h' to within two decimal places");
-        System.out.println("Enter the cone base radius: ");
+        log.info("Hi! This program calculate whole surface area of the cone.");
+        log.info("You should enter the radius 'r' and the height 'h' to within two decimal places");
+        log.info("Enter the cone base radius: ");
         calculateSquare();
     }
 
@@ -21,18 +25,18 @@ public class ConeSquare {
         double square;
 
         try (Scanner in = new Scanner(System.in)) {
-            System.out.println("radius:");
+            log.info("radius:");
             while (!in.hasNextDouble()) {
-                System.out.println("Enter the number in the right format !");
-                System.out.println("radius:");
+                log.info("Enter the number in the right format !");
+                log.info("radius:");
                 in.next();
             }
             radius = in.nextDouble();
-            System.out.println("Enter the height of the cone base radius:");
-            System.out.println("height:");
+            log.info("Enter the height of the cone base radius:");
+            log.info("height:");
             while (!in.hasNextDouble()) {
-                System.out.println("Enter the number in the right format !");
-                System.out.println("height:");
+                log.info("Enter the number in the right format !");
+                log.info("height:");
                 in.next();
             }
             height = in.nextDouble();
@@ -40,8 +44,8 @@ public class ConeSquare {
                 coneLong = Math.sqrt(Math.pow(radius, 2) + Math.pow(height, 2));
                 square = Math.PI * radius * (radius + coneLong);
                 DecimalFormat f = new DecimalFormat("##.00");
-                System.out.println("Сone surface area is:");
-                System.out.println("s = " + f.format(square));
+                log.info("Сone surface area is:");
+                log.info("s = " + f.format(square));
             } else {
                 System.err.println("The value cannot be calculated! Enter positive number, please");
             }
@@ -51,7 +55,7 @@ public class ConeSquare {
 
     static void continueCalculate() {
 
-        System.out.println("Do you want to calculate the square again ? Type 'Yes' or 'No'");
+        log.info("Do you want to calculate the square again ? Type 'Yes' or 'No'");
         try (Scanner in = new Scanner(System.in)) {
             while (true) {
                 String input = in.nextLine();
@@ -59,11 +63,11 @@ public class ConeSquare {
                     calculateSquare();
                     break;
                 } else if (input.equalsIgnoreCase("no")) {
-                    System.out.println("Good bye");
+                    log.info("Good bye");
                     break;
                 } else {
-                    System.out.println("Make the right choice !");
-                    System.out.println("Type 'Yes' or 'No'");
+                    log.info("Make the right choice !");
+                    log.info("Type 'Yes' or 'No'");
                 }
             }
         }
