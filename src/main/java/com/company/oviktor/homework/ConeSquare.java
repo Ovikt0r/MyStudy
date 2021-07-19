@@ -59,10 +59,10 @@ public class ConeSquare {
         try (Scanner in = new Scanner(System.in)) {
             while (true) {
                 String input = in.nextLine();
-                if (input.equalsIgnoreCase("yes")) {
+                if ((input.equalsIgnoreCase("yes")) || (input.equalsIgnoreCase("y"))) {
                     calculateSquare();
                     break;
-                } else if (input.equalsIgnoreCase("no")) {
+                } else if ((input.equalsIgnoreCase("no")) || (input.equalsIgnoreCase("n"))) {
                     log.info("Good bye");
                     break;
                 } else {

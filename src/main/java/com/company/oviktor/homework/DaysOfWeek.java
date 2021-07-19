@@ -47,10 +47,10 @@ class DaysOfWeek {
         try (Scanner in = new Scanner(System.in)) {
             while (true) {
                 String input = in.nextLine();
-                if (input.equalsIgnoreCase("yes")) {
+                if ((input.equalsIgnoreCase("yes")) || (input.equalsIgnoreCase("y"))) {
                     calculateDay();
                     break;
-                } else if (input.equalsIgnoreCase("no")) {
+                } else if ((input.equalsIgnoreCase("no")) || (input.equalsIgnoreCase("n"))) {
                     log.info("Good bye");
                     break;
                 } else {
