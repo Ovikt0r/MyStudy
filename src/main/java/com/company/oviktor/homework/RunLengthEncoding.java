@@ -3,11 +3,11 @@ package com.company.oviktor.homework;
 public class RunLengthEncoding {
 
     public void encode (String str) {
-        int counter;
+        int counter = 1;
         StringBuilder output = new StringBuilder();
 
         for(int i = 0; i < str.length(); i++) {
-            counter = 1;
+
             while (i < str.length() - 1  && str.charAt(i) == str.charAt(i+1) ) {
                 counter++;
                 i++;
