@@ -1,6 +1,6 @@
 package com.company.oviktor.booktasks.initializationcleanup;
 
-class Dog {
+class Dog2 {
 
     void bark(int i, String s) {
         System.out.println("Integer " + i + " is located at the first place," + " Sharik says: " + s);
@@ -12,7 +12,7 @@ class Dog {
 
     static public class Ex06 {
         public static void main(String[] args) {
-            Dog sharik = new Dog();
+            Dog2 sharik = new Dog2();
             sharik.bark(1, "gav gav gav");
             sharik.bark("au au au ", 2);
         }
