@@ -7,7 +7,6 @@ public class Ex10 {
    // static Set<String> ts = new HashSet<>();
     static SortedSet ss = new TreeSet();
 
-public class Ex10 {
 
     static int a (int i) {
         return i/1000;
