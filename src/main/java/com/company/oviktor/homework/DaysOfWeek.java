@@ -25,19 +25,18 @@ class DaysOfWeek {
             int item = in.nextInt();
             if (item > 0 && item < 8) {
                 switch (item) {
-                    case 1 -> log.info("Monday");
-                    case 2 -> log.info("Tuesday");
-                    case 3 -> log.info("Wednesday");
-                    case 4 -> log.info("Thursday");
-                    case 5 -> log.info("Friday");
-                    case 6 -> log.info("Saturday");
-                    case 7 -> log.info("Sunday");
+                    case 1 -> log.info(Days.MONDAY.toString());
+                    case 2 -> log.info(Days.TUESDAY.toString());
+                    case 3 -> log.info(Days.WEDNESDAY.toString());
+                    case 4 -> log.info(Days.THURSDAY.toString());
+                    case 5 -> log.info(Days.FRIDAY.toString());
+                    case 6 -> log.info(Days.SATURDAY.toString());
+                    case 7 -> log.info(Days.SUNDAY.toString());
                 }
-                continueCalculate();
             } else {
                 log.info("Enter the number in the range from 1 to 7, please!");
-                continueCalculate();
             }
+            continueCalculate();
         }
     }
 
