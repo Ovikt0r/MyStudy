@@ -3,17 +3,16 @@ package com.company.oviktor.booktasks.accesscontrol;
 class Connection {
 
     private static int count = 1;
-    private int id = count++;
     private Connection () {}
     static Connection makeConnection() {
         return new Connection();
     }
     public String toString(){
-        return "Connection " + id;
+        return "Connection " + count++;
     }
 
     public void doSomething() {
-        System.out.println("It is how works some method invocation from makeConnection method");
+        System.out.println("This is how works some method invocation from makeConnection method");
     }
 }
 
