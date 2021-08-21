@@ -1,12 +1,17 @@
 package com.company.oviktor.homework;
 
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class RleCompressionTest {
 
         @Test
+        @Order(1)
         public void encodeEmpty() {
             RleCompression rleC = new RleCompression();
             String actual = rleC.encode("");
@@ -15,6 +20,7 @@ class RleCompressionTest {
         }
 
         @Test
+        @Order(2)
         public void decodeEmpty() {
             RleCompression rleC = new RleCompression();
             String actual = rleC.decode("");
@@ -23,6 +29,7 @@ class RleCompressionTest {
         }
 
         @Test
+        @Order(3)
         public void encodeOneLetter() {
             RleCompression rleC = new RleCompression();
             String actual = rleC.encode("rMPfglkWaZx");
@@ -31,6 +38,7 @@ class RleCompressionTest {
         }
 
         @Test
+        @Order(4)
         public void decodeOneLetter() {
             RleCompression rleC = new RleCompression();
             String actual = rleC.decode("m1B1t1L1P1f1W1y1");
@@ -40,6 +48,7 @@ class RleCompressionTest {
         }
 
         @Test
+        @Order(5)
         public void encodeNormal() {
             RleCompression rleC = new RleCompression();
             String actual = rleC.encode("ffffffffffHHHHkkNNNNaaaPPQQQss");
@@ -48,6 +57,7 @@ class RleCompressionTest {
         }
 
         @Test
+        @Order(6)
         public void decodeNormal() {
             RleCompression rleC = new RleCompression();
             String actual = rleC.decode("g13t6N3p2K9v17");
@@ -56,6 +66,7 @@ class RleCompressionTest {
         }
 
         @Test
+        @Order(7)
         public void encodeNumbers() {
             RleCompression rleC = new RleCompression();
             String actual = rleC.encode("99998844444666333333333222222");
