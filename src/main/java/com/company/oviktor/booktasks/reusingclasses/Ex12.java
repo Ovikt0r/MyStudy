@@ -37,30 +37,30 @@ class Root {
     }
     void dispose(){
         System.out.println("Root dispose");
+        c1.dispose();
+        c2.dispose();
+        c3.dispose();
     }
 }
 
 class Stem extends Root{
+    Component1 c1 = new Component1();
+    Component2 c2 = new Component2();
+    Component3 c3 = new Component3();
     Stem() {
         System.out.println("Calling Stem");
     }
     void dispose(){
         System.out.println("Stem dispose");
+        c3.dispose();
+        c2.dispose();
+        c1.dispose();
         super.dispose();
     }
 }
 
 public class Ex12 {
     public static void main(String[] args) {
-        Stem stem = new Stem();
-        try {
-            System.out.println("Try area is done");
-        }
-        finally {
-            stem.c1.dispose();
-            stem.c2.dispose();
-            stem.c3.dispose();
-            stem.dispose();
-        }
+        new Stem().dispose();
     }
 }
