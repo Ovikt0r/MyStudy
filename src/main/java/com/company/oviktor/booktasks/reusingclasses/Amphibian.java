@@ -1,13 +1,14 @@
 package com.company.oviktor.booktasks.reusingclasses;
 
 public class Amphibian {
-    void breath() {
-        System.out.println("Inhale and exhale");
+    void depth(String s, int i) {
+        System.out.println("I dive to " + s + " in " + i + " seconds");
     }
-    void swimAway(){
-        System.out.println("Swimming go away");
+    void goTo(String location , double i){
+
+        System.out.println("I go to " + location + " in " + i + " hours");
     }
-    void jump(){
-        System.out.println("Jump !");
+    void jump(int height){
+        System.out.println("I can jump up on " + height + " meters");
     }
 }
