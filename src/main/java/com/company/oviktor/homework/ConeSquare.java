@@ -2,12 +2,11 @@ package com.company.oviktor.homework;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class ConeSquare {
-
-    private final static Logger log = LoggerFactory.getLogger(DaysOfWeek.class);
 
 
     public static void main(String[] args) {
@@ -59,10 +58,10 @@ public class ConeSquare {
         try (Scanner in = new Scanner(System.in)) {
             while (true) {
                 String input = in.nextLine();
-                if (input.equalsIgnoreCase("yes")) {
+                if ((input.equalsIgnoreCase("yes")) || (input.equalsIgnoreCase("y"))) {
                     calculateSquare();
                     break;
-                } else if (input.equalsIgnoreCase("no")) {
+                } else if ((input.equalsIgnoreCase("no")) || (input.equalsIgnoreCase("n"))) {
                     log.info("Good bye");
                     break;
                 } else {
