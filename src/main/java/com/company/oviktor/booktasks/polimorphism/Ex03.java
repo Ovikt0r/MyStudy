@@ -5,6 +5,9 @@ import java.util.Random;
 class Shape {
     public void draw() {}
     public void erase() {}
+    public void text() {
+        System.out.println("Type some text on the shape");
+    }
 }
 
 class Circle extends Shape {
@@ -15,6 +18,10 @@ class Circle extends Shape {
     @Override
     public void erase() {
         System.out.println("Erasing circle");
+    }
+    @Override
+    public void text() {
+        System.out.println("Type some text on the circle");
     }
 }
 
@@ -27,6 +34,9 @@ class Square extends Shape {
     public void erase() {
         System.out.println("Erasing square");
     }
+    @Override
+    public void text() { System.out.println("Type some text on the square");
+    }
 }
 
 class Triangle extends Shape {
@@ -38,10 +48,13 @@ class Triangle extends Shape {
     public void erase() {
         System.out.println("Erasing square");
     }
+    @Override
+    public void text() { System.out.println("Type some text on the triangle");
+    }
 }
 
 class RandomShapeGenerator {
-    private final Random random = new Random(74);
+    private final Random random = new Random(19);
 
     public Shape next(){
         switch (random.nextInt(3)) {
@@ -53,7 +66,7 @@ class RandomShapeGenerator {
     }
 }
 
-public class Ex02 {
+public class Ex03 {
     private static final RandomShapeGenerator rsg = new RandomShapeGenerator();
 
     public static void main(String[] args) {
@@ -64,6 +77,7 @@ public class Ex02 {
         for(Shape shp : shapes) {
             shp.draw();
             shp.erase();
+            shp.text();
         }
     }
 }
