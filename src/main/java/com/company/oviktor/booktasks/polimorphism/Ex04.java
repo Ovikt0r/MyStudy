@@ -52,21 +52,35 @@ class Triangle extends Shape {
     public void text() { System.out.println("Type some text on the triangle");
     }
 }
+class Dodecahedron extends Shape{
+    @Override
+    public void draw() {
+        System.out.println("Drawing dodecahedron");
+    }
+    @Override
+    public void erase() {
+        System.out.println("Erasing dodecahedron");
+    }
+    @Override
+    public void text() { System.out.println("Type some text on the dodecahedron");
+    }
+}
 
 class RandomShapeGenerator {
-    private final Random random = new Random(19);
+    private final Random random = new Random(54);
 
     public Shape next(){
-        switch (random.nextInt(3)) {
+        switch (random.nextInt(4)) {
             default:
             case 0: return new Circle();
             case 1: return new Square();
             case 2: return new Triangle();
+            case 3: return new Dodecahedron();
         }
     }
 }
 
-public class Ex03 {
+public class Ex04 {
     private static final RandomShapeGenerator rsg = new RandomShapeGenerator();
 
     public static void main(String[] args) {
