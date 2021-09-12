@@ -1,6 +1,8 @@
 package com.company.oviktor.booktasks.polimorphism;
 
 
+import java.util.Random;
+
 class Instrument {
     void play (Note n) { System.out.println("Instrument play note " + n);}
     public String toString() {return "Instrument";}
@@ -44,23 +46,44 @@ class ContraBass extends Instrument {
     void adjust() { System.out.println("Contrabass instrument"); }
 }
 
-public class Ex07_Music3 {
 
+class RandomGeneratorClass {
+    private final Random random = new Random(45);
 
-   static Instrument[] orchestra = {
-            new Wind(),
-            new Percussion(),
-            new Stringed(),
-            new Bass(),
-            new WoodWind(),
-            new ContraBass()};
+    public Instrument next() {
+        switch (random.nextInt(5)) {
+            default:
+            case 0:
+                return new Wind();
+            case 1:
+                return new Percussion();
+            case 2:
+                return new Stringed();
+            case 3:
+                return new Bass();
+            case 4:
+                return new WoodWind();
+            case 5:
+                return new ContraBass();
+        }
+    }
+}
+
+public class Ex08_Music3 {
+
+    private static RandomGeneratorClass rgc = new RandomGeneratorClass();
 
     public static void main(String[] args) {
 
-        for (Instrument i : orchestra) {
-            i.play(Note.C_SHARP);
-            i.adjust();
-            System.out.println(i);
+        Instrument[] s = new Instrument[9];
+
+        for(int i = 0; i < s.length; i++) {
+            s[i] = rgc.next();
         }
+            for (Instrument ins : s) {
+                ins.play(Note.C_SHARP);
+                ins.adjust();
+                System.out.println(ins);
+            }
     }
 }
