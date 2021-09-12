@@ -28,6 +28,7 @@ class Stringed extends Instrument {
 }
 class Bass extends Wind {
     void play (Note n) { System.out.println("Bass play note " + n);}
+    public String toString() {return "Bass";}
     void adjust() {System.out.println("Bass Instrument");}
 
 }
@@ -37,22 +38,29 @@ class WoodWind extends Wind {
 
 }
 
-public class Ex06_Music3 {
+class ContraBass extends Instrument {
+    void play (Note n) { System.out.println("Contrabass play note " + n);}
+    public String toString() {return "Contrabass";}
+    void adjust() { System.out.println("Contrabass instrument"); }
+}
+
+public class Ex07_Music3 {
 
 
-    public static void tuneAll (Instrument[] e) {
-        for(Instrument i : e) {
-            System.out.println(i);
-        }
-    }
+   static Instrument[] orchestra = {
+            new Wind(),
+            new Percussion(),
+            new Stringed(),
+            new Bass(),
+            new WoodWind(),
+            new ContraBass()};
 
     public static void main(String[] args) {
-        Instrument[] orchestra = {
-                new Wind(),
-                new Percussion(),
-                new Stringed(),
-                new Bass(),
-                new WoodWind()};
-        tuneAll(orchestra);
+
+        for (Instrument i : orchestra) {
+            i.play(Note.C_SHARP);
+            i.adjust();
+            System.out.println(i);
+        }
     }
 }
