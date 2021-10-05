@@ -20,7 +20,7 @@ class Rodent {
 
 class Mouse extends Rodent {
 
-    void printName () {
+    void printName() {
         System.out.println("I am a Mouse");
     }
 
@@ -31,7 +31,7 @@ class Mouse extends Rodent {
 
 class Hamster extends Rodent {
 
-    void printName () {
+    void printName() {
         System.out.println("I am a Hamster");
     }
 
@@ -39,9 +39,10 @@ class Hamster extends Rodent {
         System.out.println("I have been living since 5 million years ago");
     }
 }
+
 class Rat extends Rodent {
 
-    void printName () {
+    void printName() {
         System.out.println("I am a Rat");
     }
 
@@ -49,9 +50,10 @@ class Rat extends Rodent {
         System.out.println("I have been living since 15 million years ago");
     }
 }
-class Chipmunk extends Rodent{
 
-    void printName () {
+class Chipmunk extends Rodent {
+
+    void printName() {
         System.out.println("I am a Chipmunk");
     }
 
@@ -67,21 +69,28 @@ class RandomGenerator {
     public Rodent next() {
         switch (random.nextInt(8)) {
             default:
-            case 1: return new Chipmunk();
-            case 2: return new Hamster();
-            case 3: return new Mouse();
-            case 4: return new Rodent();
-            case 5: return new Mouse();
-            case 6: return new Rat();
-            case 7: return new Hamster();
-            case 0: return new Rodent();
+            case 1:
+                return new Chipmunk();
+            case 2:
+                return new Hamster();
+            case 3:
+                return new Mouse();
+            case 4:
+                return new Rodent();
+            case 5:
+                return new Mouse();
+            case 6:
+                return new Rat();
+            case 7:
+                return new Hamster();
+            case 0:
+                return new Rodent();
 
         }
 
     }
 
 }
-
 
 
 public class Ex12 {
@@ -96,8 +105,6 @@ public class Ex12 {
             rd.printName();
             rd.printClass();
             rd.printAge();
-
-
         }
 
     }
