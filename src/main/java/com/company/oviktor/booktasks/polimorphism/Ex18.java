@@ -12,12 +12,20 @@ class Unicycle extends Cycle {
     public void ride() {
         System.out.println("Ride on unicycle");
     }
+
+    public void balance() {
+        System.out.println("Hold the balance");
+    }
 }
 
 class Bicycle extends Cycle {
 
     public void ride() {
         System.out.println("Ride on bicycle");
+    }
+
+    public void balance() {
+        System.out.println("Hold the balance");
     }
 }
 
@@ -28,22 +36,17 @@ class Tricycle extends Cycle {
     }
 }
 
-public class Ex01 {
+public class Ex18 {
 
-     public static void move(Cycle c) {
-         c.ride();
-     }
 
     public static void main(String[] args) {
 
-         Cycle cycle = new Cycle();
-         Unicycle unicycle = new Unicycle();
-         Bicycle bicycle = new Bicycle();
-         Tricycle tricycle = new Tricycle();
+         Cycle[] cycles = new Cycle[] {new Unicycle(),
+                          new Bicycle(),
+                          new Tricycle()};
+        ((Unicycle)cycles[0]).balance();
+        ((Bicycle)cycles[1]).balance();
+        ((Unicycle)cycles[2]).balance();
 
-         move(cycle);
-         move(unicycle);
-         move(bicycle);
-         move(tricycle);
     }
 }
