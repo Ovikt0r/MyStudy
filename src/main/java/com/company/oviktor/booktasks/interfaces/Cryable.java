@@ -1,6 +1,6 @@
 package com.company.oviktor.booktasks.interfaces;
 
-public interface Cryable extends Adorable {
+public interface Cryable  {
 
-    void dropTears();
+    void make();
 }
