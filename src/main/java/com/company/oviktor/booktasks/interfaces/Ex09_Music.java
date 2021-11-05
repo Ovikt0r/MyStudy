@@ -1,71 +1,83 @@
 package com.company.oviktor.booktasks.interfaces;
 
-abstract class Instrument {
+class Instruments implements Playable {
 
 
-    int VALUE = 5;
-    abstract void play(Note n);
-    abstract void adjust();
+    public void play(Note n) {
+        System.out.println(this + ".play " + n);
+    }
+
+    public void adjust() {
+        System.out.println(this + ".adjust");
+    }
 }
 
-
-class Wind extends Instrument {
+class Wind implements Playable {
     public void play(Note n) {
         System.out.println(this + ".play() " + n);
     }
-    public String toString() { return "Wind"; }
-    public void adjust() { System.out.println(this + ".adjust()"); }
+
+    public String toString() {
+        return "Wind";
+    }
+
+    public void adjust() {
+        System.out.println(this + ".adjust()");
+    }
 }
 
-class Percussion extends Instrument {
+class Percussion implements Playable {
     public void play(Note n) {
         System.out.println(this + ".play() " + n);
     }
-    public String toString() { return "Percussion"; }
-    public void adjust() { System.out.println(this + ".adjust()"); }
+
+    public String toString() {
+        return "Percussion";
+    }
+
+    public void adjust() {
+        System.out.println(this + ".adjust()");
+    }
 }
 
-class Stringed extends Instrument {
+class Stringed implements Playable {
     public void play(Note n) {
         System.out.println(this + ".play() " + n);
     }
-    public String toString() { return "Stringed"; }
-    public void adjust() { System.out.println(this + ".adjust()"); }
+
+    public String toString() {
+        return "Stringed";
+    }
+
+    public void adjust() {
+        System.out.println(this + ".adjust()");
+    }
 }
 
 
 public class Ex09_Music {
 
-    public static void main(String[] args) {
-        Percussion percussion = new Percussion();
-        Wind wind = new Wind();
-        Stringed stringed = new Stringed();
-        Instrument instrument = new Instrument() {
-            @Override
-            void play(Note n) {
-                System.out.println("I play note " + n);
-            }
-
-            @Override
-            void adjust() {
-                System.out.println(VALUE + " adjust");
-            }
-        };
-
-        percussion.adjust();
-        wind.adjust();
-        stringed.adjust();
-        stringed.play(Note.C_SHARP);
-        wind.play(Note.MIDDLE_C);
-        percussion.play(Note.B_FLAT);
-        percussion.adjust();
-        wind.adjust();
-        stringed.adjust();
-        instrument.play(Note.C_SHARP);
-        instrument.adjust();
-
+    static void tune(Playable p) {
+        p.play(Note.MIDDLE_C);
+        p.adjust();
     }
-}
+
+    static void tuneAll(Playable[] playable) {
+        for(Playable pl : playable) {
+            tune(pl);
+        }
+    }
+
+    public static void main(String[] args) {
+        Playable[] orchestra  = {new Percussion(),
+                                new Stringed(),
+                                new Wind(),
+                                new Instruments()};
+                tuneAll(orchestra);
+
+            }
+        }
+
 
 
 
