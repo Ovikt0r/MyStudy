@@ -2,7 +2,8 @@ package com.company.oviktor.booktasks.interfaces;
 
 public interface Adorable {
 
-    void make();
+    void take();
 
+    void give();
 
 }

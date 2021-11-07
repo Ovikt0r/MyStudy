@@ -1,16 +1,61 @@
 package com.company.oviktor.booktasks.interfaces;
 
-class Person implements Relationship{
-    public void make() {
-        System.out.println("I made myself ");
+
+
+class Human {
+    String s;
+    Human(String s) {
+        this.s = s;
     }
+}
+
+
+class Person extends Human implements Relationship {
+    Person() {super("Though");}
+    public void make() {System.out.println("Person.make");}
+    public void does() {System.out.println("Person.does");}
+    public void take() {System.out.println("Person.take");}
+    public void give() {System.out.println("Person.give");}
+    public void get() {System.out.println("Person.get");}
+    public void keep() {System.out.println("Person.keep");}
+    public void connect() {System.out.println("Person.connect");}
+
 }
 
 
 public class Ex14 {
 
+    static void meth1(Admirable a) {
+        a.make();
+        a.does();
+    }
+
+    static void meth2(Adorable b) {
+        b.give();
+        b.take();
+    }
+
+    static void meth3(Cryable c) {
+        c.get();
+        c.keep();
+    }
+
+    static void methAll(Person p) {
+        p.does();
+        p.get();
+        p.give();
+        p.keep();
+        p.take();
+        p.connect();
+        p.make();
+    }
+
     public static void main(String[] args) {
-        new Person().make();
+        Person p = new Person();
+        meth1(p);
+        meth2(p);
+        meth3(p);
+        methAll(p);
     }
 
 }
