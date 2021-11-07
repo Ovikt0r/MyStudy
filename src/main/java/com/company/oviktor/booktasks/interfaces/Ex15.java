@@ -1,17 +1,17 @@
 package com.company.oviktor.booktasks.interfaces;
 
 
-
-class Human {
+abstract class Human {
     String s;
     Human(String s) {
         this.s = s;
     }
+    abstract void af();
 }
-
 
 class Person extends Human implements Relationship {
     Person() {super("Though");}
+    public void af() {System.out.println("Person.af");}
     public void make() {System.out.println("Person.make");}
     public void does() {System.out.println("Person.does");}
     public void take() {System.out.println("Person.take");}
@@ -23,7 +23,7 @@ class Person extends Human implements Relationship {
 }
 
 
-public class Ex14 {
+public class Ex15 {
 
     static void meth1(Admirable a) {
         a.make();
@@ -50,12 +50,17 @@ public class Ex14 {
         p.make();
     }
 
+    static void abstractMeth(Human h) {
+        h.af();
+    }
+
     public static void main(String[] args) {
         Person p = new Person();
         meth1(p);
         meth2(p);
         meth3(p);
         methAll(p);
+        abstractMeth(p);
     }
 
 }
