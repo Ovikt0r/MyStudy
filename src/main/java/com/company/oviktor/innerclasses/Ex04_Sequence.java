@@ -17,10 +17,10 @@ interface Selector {
     void next();
 }
 
-public class Ex02_Sequence {
+public class Ex04_Sequence {
     private Object[] items;
     private int next = 0;
-    public Ex02_Sequence(int size) { items = new Object[size]; }
+    public Ex04_Sequence(int size) { items = new Object[size]; }
     public void add(Object x) {
         if(next < items.length)
             items[next++] = x;
@@ -30,6 +30,9 @@ public class Ex02_Sequence {
         public boolean end() { return i == items.length; }
         public Object current() { return items[i]; }
         public void next() { if(i < items.length) i++; }
+        public Ex04_Sequence getSequence() {
+            return Ex04_Sequence.this;
+        }
     }
     public Selector selector() {
         return new SequenceSelector();
@@ -37,7 +40,7 @@ public class Ex02_Sequence {
 
 
     public static void main(String[] args) {
-        Ex02_Sequence sequence = new Ex02_Sequence(10);
+        Ex04_Sequence sequence = new Ex04_Sequence(10);
         for(int i = 0; i < 10; i++)
             sequence.add(new StringHolder(Integer.toString(i)));
         Selector selector = sequence.selector();
@@ -49,7 +52,7 @@ public class Ex02_Sequence {
         StringHolder sh2 = new StringHolder("Second string");
         StringHolder sh3 = new StringHolder("Third string");
 
-        Ex02_Sequence message = new Ex02_Sequence(3);
+        Ex04_Sequence message = new Ex04_Sequence(3);
         message.add(sh1);
         message.add(sh2);
         message.add(sh3);
