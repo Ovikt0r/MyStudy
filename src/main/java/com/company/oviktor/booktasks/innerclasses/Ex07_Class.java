@@ -3,7 +3,7 @@ package com.company.oviktor.booktasks.innerclasses;
 public class Ex07_Class {
 
     private String garage = "Street avenue";
-    private void showMeGarage() {
+    private void showGarage() {
         System.out.println(garage);
     }
 
@@ -13,10 +13,9 @@ public class Ex07_Class {
     class InnerCl {
         void change(){
             garage = garage + " and boulevard";
-            showMeGarage();
+            showGarage();
         }
     }
-
     public static void main(String[] args) {
         new Ex07_Class().thirdSide();
     }
