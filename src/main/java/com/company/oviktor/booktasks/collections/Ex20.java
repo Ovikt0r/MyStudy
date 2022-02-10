@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.*;
 
 @Slf4j
-public class Ex18 {
+public class Ex20 {
 
     public static void main(String[] args) {
         Set<String> set = new HashSet<>();
