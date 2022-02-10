@@ -8,24 +8,20 @@ import java.util.*;
 public class Ex18 {
 
     public static void main(String[] args) {
-        Map<String, String> hashMap = new HashMap<>();
-        hashMap.put("UKRAINE", "Kyiv");
-        hashMap.put("USA", "Washington");
-        hashMap.put("UK", "London");
-        hashMap.put("FRANCE", "Paris");
-        hashMap.put("SPAIN", "Madrid");
-        hashMap.put("GREECE", "Athene");
-        hashMap.put("GERMAN", "Berlin");
-        hashMap.put("NORWAY", "Oslo");
-        log.info(hashMap.toString());
-
-        Set<String> stringSet = new TreeSet<>(hashMap.keySet());
-        log.info(stringSet.toString());
-
-        Map<String, String> hashMap2 = new LinkedHashMap<>();
-        for (String s : stringSet) {
-            hashMap2.put(s, hashMap.get(s));
-        }
-        log.info(hashMap2.toString());
+        Set<String> set = new HashSet<>();
+        set.add("UKRAINE");
+        set.add("USA");
+        set.add("UK");
+        set.add("FRANCE");
+        set.add("SPAIN");
+        set.add("GREECE");
+        set.add("GERMAN");
+        set.add("NORWAY");
+        log.info(set.toString());
+        String[] countries = set.toArray(new String[0]);
+        Arrays.sort(countries);
+        Set<String> set2 = new LinkedHashSet<>();
+        Collections.addAll(set2, countries);
+        log.info(set2.toString());
     }
 }
