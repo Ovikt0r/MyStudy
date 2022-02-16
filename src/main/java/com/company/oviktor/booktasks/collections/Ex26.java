@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.*;
 
 @Slf4j
-public class Ex25 {
+public class Ex26 {
 
 
     public static void main(String[] args) {
@@ -20,7 +20,15 @@ public class Ex25 {
             }
             wordList.add(++i);
         }
-        ;
+
+        Map<Integer, String> sortMap = new TreeMap<>();
+        for (Map.Entry<String, ArrayList<Integer>> entry : wordCounter.entrySet()) {
+            for(Integer pos : entry.getValue()){
+                sortMap.put(pos, entry.getKey());
+            }
+        }
+
         log.info(wordCounter.toString());
+        log.info(sortMap.toString());
     }
 }
