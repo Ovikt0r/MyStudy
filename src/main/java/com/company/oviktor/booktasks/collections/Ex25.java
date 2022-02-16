@@ -11,7 +11,7 @@ public class Ex25 {
     public static void main(String[] args) {
         Map<String, ArrayList<Integer>> wordCounter = new TreeMap<>();
 
-        Integer i = 0;
+        int i = 0;
         for (String word : new TextFile("text.txt", "\\W+")) {
             ArrayList<Integer> wordList = wordCounter.get(word);
             if (wordList == null) {
