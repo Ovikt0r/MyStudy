@@ -35,7 +35,7 @@ class HistoUnit implements Comparable<HistoUnit> {
 }
 
 @Slf4j
-public class Ex23_Statics {
+public class Ex23_1_Statics {
     public static void main(String[] args) {
 
         Random rand = new Random(47);
