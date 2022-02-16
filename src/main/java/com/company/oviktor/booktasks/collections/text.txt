@@ -1,9 +1,0 @@
-flowers
-windows
-cat
-mindview
-dangerous
-leaf
-perfect
-developing
-java
