@@ -20,7 +20,6 @@ public class Ex25 {
             }
             wordList.add(++i);
         }
-        ;
         log.info(wordCounter.toString());
     }
 }
