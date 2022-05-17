@@ -13,26 +13,26 @@ class MyException extends Exception{
     }
 }
 
-class MyException2 extends Exception {
 
-    public MyException2(String s) {
-        super(s);
+@Slf4j
+class TestSpecification{
+
+
+    static void f() throws MyException {
+
+        throw new MyException("Inside f()");
     }
 }
+
 @Slf4j
-public class Ex04 {
+public class Ex08 {
+
     public static void main(String[] args) {
         try {
-            throw new MyException("!String exception!");
+            TestSpecification.f();
         }
         catch (MyException e) {
             e.print();
-        }
-        try {
-            throw new MyException2("!String second exception!");
-        }
-        catch (MyException2 e) {
-            log.info("e.getMessage: " + e.getMessage());
         }
     }
 }
