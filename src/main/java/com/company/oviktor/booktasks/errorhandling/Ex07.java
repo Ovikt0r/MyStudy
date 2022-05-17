@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 @Slf4j
-public class Ex03 {
+public class Ex07 {
 
     static void logException(Exception e) {
         StringWriter trace = new StringWriter();
