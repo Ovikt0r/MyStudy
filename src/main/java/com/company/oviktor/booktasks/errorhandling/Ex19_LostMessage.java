@@ -13,13 +13,9 @@ class HoHumException extends Exception {
         return "A trivial exception";
     }
 }
-class ThirdException extends Exception {
-    public String toString() {
-        return "That exception loses the rest ";
-    }
-}
+
 @Slf4j
-public class Ex18_LostMessage {
+public class Ex19_LostMessage {
     void f() throws VeryImportantException {
         throw new VeryImportantException();
     }
@@ -28,25 +24,19 @@ public class Ex18_LostMessage {
         throw new HoHumException();
     }
 
-    void cleanAll() throws ThirdException {
-        throw new ThirdException();
-    }
-
-    public static void main(String[] args) throws VeryImportantException, HoHumException, ThirdException {
-
+    public static void main(String[] args) {
         try {
-            Ex18_LostMessage lm = new Ex18_LostMessage();
+            Ex19_LostMessage lm = new Ex19_LostMessage();
             try {
-                try {
-                    lm.f();
-                } finally {
-                    lm.dispose();
-                }
+                lm.f();
             } finally {
-                lm.cleanAll();
+                try {
+                    lm.dispose();
+                } catch (HoHumException e) {
+                    log.info(e.toString());
+                }
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             log.info(e.toString());
         }
     }
