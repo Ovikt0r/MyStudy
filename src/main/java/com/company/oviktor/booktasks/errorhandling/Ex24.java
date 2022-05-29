@@ -13,7 +13,8 @@ class ConstructorException extends Exception {
 class Terminate {
     private static long counter = 1;
     private final long id = counter++;
-    public void dispose(){
+
+    public void dispose() {
         log.info("Object " + id + " is free");
 
     }
@@ -21,22 +22,29 @@ class Terminate {
 
 @Slf4j
 class FailingConstructor {
-    Terminate t1;
+    private final Terminate t1,t2;
+
     FailingConstructor(boolean fail) throws ConstructorException {
         t1 = new Terminate();
         try {
             if (fail) throw new ConstructorException("Exception is caused by constructor");
         } catch (ConstructorException e) {
-            Terminate t2 = new Terminate();
-            t2.dispose();
+            t1.dispose();
             throw e;
         }
+        t2 = new Terminate();
     }
+
+    public void dispose() {
+        t1.dispose();
+        t2.dispose();
+    }
+
 }
 
 
 @Slf4j
-public class Ex23 {
+public class Ex24 {
 
     public static void main(String[] args) {
         for (boolean b = false; ; b = !b) {
@@ -47,6 +55,7 @@ public class Ex23 {
                     log.info("Processing....");
                 } finally {
                     log.info("Clean up");
+                    ex22.dispose();
                 }
             } catch (ConstructorException e) {
                 log.info("Constructing has failed :" + e);
