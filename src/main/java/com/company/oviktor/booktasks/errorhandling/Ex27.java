@@ -3,7 +3,7 @@ package com.company.oviktor.booktasks.errorhandling;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class Ex03 {
+public class Ex27 {
     public static void main(String[] args) {
 
         try {
@@ -12,7 +12,7 @@ public class Ex03 {
             log.info(strings[10]);
         }
         catch (ArrayIndexOutOfBoundsException e) {
-            log.info("exception that i've caught is: " + e);
+            throw new RuntimeException(e);
         }
 
     }
